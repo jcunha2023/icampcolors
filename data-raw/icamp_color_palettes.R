@@ -1,7 +1,3 @@
-## code to prepare `icamp_color_palettes` dataset goes here
-
-usethis::use_data(icamp_color_palettes, overwrite = TRUE)
-
 library(palettes)
 
 #iCaMP Blue---------------------------------------------------------------------
@@ -25,7 +21,7 @@ icamp_colorblind_friendly_discrete <- pal_palette(
 
 )
 
-plot(icamp_palettes_discrete)
+plot(icamp_colorblind_friendly_discrete)
 
 usethis::use_data(icamp_colorblind_friendly_discrete, overwrite = TRUE)
 
@@ -44,18 +40,18 @@ icamp_palettes_sequential <- pal_palette(
 
 )
 
-plot(icamp_palettes_discrete)
+plot(icamp_palettes_sequential)
 
 usethis::use_data(icamp_palettes_sequential, overwrite = TRUE)
 
 #All Palettes-------------------------------------------------------------------
 
-icamp_palettes <- c(
+icamp_color_palettes <- c(
   icamp_blue_discrete,
   icamp_colorblind_friendly_discrete,
   icamp_palettes_sequential
 )
 
-plot(icamp_palettes)
+plot(icamp_color_palettes)
 
-usethis::use_data(icamp_palettes, overwrite = TRUE)
+usethis::use_data(icamp_color_palettes, overwrite = TRUE)

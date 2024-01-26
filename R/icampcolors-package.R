@@ -1,9 +1,11 @@
 #' @keywords internal
 "_PACKAGE"
 
-## usethis namespace: start
-## usethis namespace: end
+#' Internal palettes methods
+#'
+#' @import palettes
+#' @keywords internal
+#' @name icamp_color_palettes
+
 NULL
 
-
-##USE THIS AS A DOCUMENTATION PAGE. USE ROXYGEN2
