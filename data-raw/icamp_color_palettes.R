@@ -55,3 +55,4 @@ icamp_color_palettes <- c(
 plot(icamp_color_palettes)
 
 usethis::use_data(icamp_color_palettes, overwrite = TRUE)
+
