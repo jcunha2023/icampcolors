@@ -2,11 +2,16 @@ Package: icampcolors
 Type: Package
 Title: iCaMP Laboratory Color Palette
 Version: 0.1.0
-Author: Jason Cunha
+Authors@R: c(person(given = "Jason", family = "Cunha", email = "jcunha1@bu.edu", role = c("aut", "cre")),
+  person(given = "Zachary", family = "Milstone", role = c("aut"))) 
 Maintainer: Jason Cunha <jcunha1@bu.edu>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Color palettes generated for use in BUMC iCaMP Laboratory Figures
+  Constructed using the 'palettes' package and color tutorials developed by Michael 
+  McCarthy. This package "provides methods for printing, formatting, casting and 
+  coercion, extraction and updating of components, plotting, color mixing arithmetic, 
+  and color interpolation".  
 License: CC0
+URL: https://github.com/jcunha2023/icampcolors
 Encoding: UTF-8
 LazyData: true
 Depends: 
