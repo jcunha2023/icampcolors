@@ -14,7 +14,14 @@
 #'
 #' plot(icamp_color_palettes)
 #'
+#' @rdname icamp_color_palettes
 #'
+#' @format icamp_blue_discrete
+#'
+#'An object of class 'palettes_palette' with 'r length(icamp_blue_discrete)'.
+#'Use 'names(icamp_blue_discrete)' to return the names of all available color palettes.
+"icamp_blue_discrete"
+
 #' @rdname icamp_color_palettes
 #'
 #' @format icamp_colorblind_friendly_discrete
@@ -22,7 +29,6 @@
 #'An object of class 'palettes_palette' with 'r length(icamp_colorblind_friendly_discrete)'.
 #'Use 'names(icamp_colorblind_friendly_discrete)' to return the names of all available color palettes.
 "icamp_colorblind_friendly_discrete"
-
 
 #'
 #' @rdname icamp_color_palettes
