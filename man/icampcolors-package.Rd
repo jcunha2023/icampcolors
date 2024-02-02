@@ -6,6 +6,22 @@
 \alias{icampcolors-package}
 \title{icampcolors: iCaMP Laboratory Color Palette}
 \description{
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+Color palettes generated for use in BUMC iCaMP Laboratory Figures Constructed using the 'palettes' package and color tutorials developed by Michael McCarthy. This package "provides methods for printing, formatting, casting and coercion, extraction and updating of components, plotting, color mixing arithmetic, and color interpolation".
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/jcunha2023/icampcolors}
+}
+
+}
+\author{
+\strong{Maintainer}: Jason Cunha \email{jcunha1@bu.edu}
+
+Authors:
+\itemize{
+  \item Zachary Milstone
+}
+
 }
 \keyword{internal}
