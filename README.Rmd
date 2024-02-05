@@ -1,0 +1,36 @@
+---
+title: "README"
+output: github_document
+date: "2024-02-05"
+---
+
+```{r setup, include=FALSE, cache = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#")
+
+asciicast::init_knitr_engine(
+  startup = quote({
+    library(icampcolors)
+    set.seed(1)
+  }), 
+  echo = TRUE, 
+  echo_input = FALSE
+)
+```
+
+## iCaMP Color Palette
+
+Color palettes developed by Zachary Milstone, MD/PhD for use by the integrative Cardiovascular Metabolism and Pathophysiology (iCaMP) Program. Many of these palettes are colorblind friendly and have been developed for use in conference and publication figures.
+
+This package was created using the [Creating a colour palette package vignette](https://mccarthy-m-g.github.io/palettes/articles/creating-packages.html) and the [palettes Package](https://mccarthy-m-g.github.io/palettes/index.html), both developed by Michael McCarthy. Here are additional resources used in the development of this package:
+
+- [sunsets Package developed by Michael McCarthy](https://github.com/mccarthy-m-g/sunsets)
+- [R Packages (2e) by Hadley Wickham & Jennifer Bryan](https://r-pkgs.org/)
+- [A Helpful Way to Install R Packages Hosted on GitHub](https://cran.r-project.org/web/packages/githubinstall/vignettes/githubinstall.html)
+
+
+## Included Palettes
+```{r echo = FALSE}
+plot(icampcolors::icamp_color_palettes)
+```
