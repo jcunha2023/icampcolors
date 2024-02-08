@@ -25,6 +25,10 @@ development of this package:
 
 ## Included Palettes
 
+    # Loading required package: palettes
+
+<img src="README_files/figures/unnamed-chunk-2-1.png" width="100%" />
+
 ## Installation
 
 You can install icampcolors from [Github](https://github.com/) by doing
@@ -36,24 +40,8 @@ library(devtools)
 # Loading required package: usethis
 
 devtools::install_github("jcunha2023/icampcolors")
-# Downloading GitHub repo jcunha2023/icampcolors@HEAD
-# tibble (NA -> 3.2.1) [CRAN]
-# Installing 1 packages: tibble
-# Installing package into '/usr4/bf527/jcunha1/R/x86_64-pc-linux-gnu-library/4.2'
-# (as 'lib' is unspecified)
-# Warning in i.p(...): installation of package 'tibble' had non-zero exit status
-#      checking for file ‘/scratch/230855.1.ood/RtmpjbixWD/remotes3d15e84b4e9e1b/jcunha2023-icampcolors-0833c77/DESCRIPTION’ ...  ✔  checking for file ‘/scratch/230855.1.ood/RtmpjbixWD/remotes3d15e84b4e9e1b/jcunha2023-icampcolors-0833c77/DESCRIPTION’
-#   ─  preparing ‘icampcolors’:
-#      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#   ─  checking for LF line-endings in source and make files and shell scripts
-#   ─  checking for empty or unneeded directories
-#   ─  building ‘icampcolors_0.1.0.tar.gz’
-#      Warning: invalid uid value replaced by that for user 'nobody'
-#    Warning: invalid gid value replaced by that for user 'nobody'
-#      
-# 
-# Installing package into '/usr4/bf527/jcunha1/R/x86_64-pc-linux-gnu-library/4.2'
-# (as 'lib' is unspecified)
+# Skipping install of 'icampcolors' from a github remote, the SHA1 (abdcf508) has not changed since last install.
+#   Use `force = TRUE` to force installation
 ```
 
 ## Usage
@@ -61,7 +49,6 @@ devtools::install_github("jcunha2023/icampcolors")
 ``` r
 
 library(icampcolors)
-# Loading required package: palettes
 ```
 
 icampcolors includes a distinct iCaMP blue color palette, a discrete
@@ -69,8 +56,7 @@ fluorescent color palette, a colorblind-friendly discrete color palette,
 and six sequential color palettes. These can be accessed from the
 following R objects:
 
-- icamp_blue_discrete for the unique iCaMP blue color
-- icamp_colorblind_friendly_discrete for the colorblind friendly palette
+- icamp_palettes_discrete for the sequential plettes
 - icamp_palettes_sequential for the sequential palettes
   -icamp_color_palettes for all palettes
 
@@ -84,7 +70,7 @@ icamp_palettes_sequential
 
 Preview the palettes in the Plots pane with plot():
 
-<img src="README_files/figures/unnamed-chunk-4-1.png" width="100%" />
+<img src="README_files/figures/unnamed-chunk-5-1.png" width="100%" />
 
 Subset palettes using \[, \[\[, and \$. - To extract one or more
 palettes use \[:

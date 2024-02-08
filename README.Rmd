@@ -34,12 +34,17 @@ This package was created using the [Creating a colour palette package vignette](
 
 ## Included Palettes
 
+```{r echo = FALSE}
+library(icampcolors)
+plot(icampcolors::icamp_color_palettes)
+```
+
 
 ## Installation
 
 You can install icampcolors from [Github](https://github.com/) by doing the following:
 
-```{r, echo = TRUE}
+```{r}
 
 library(devtools)
 
@@ -49,16 +54,16 @@ devtools::install_github("jcunha2023/icampcolors")
 
 ## Usage
 
-```{r, echo = TRUE}
+```{r echo = TRUE}
 
 library(icampcolors)
 ```
 
 icampcolors includes a distinct iCaMP blue color palette, a discrete fluorescent color palette, a colorblind-friendly discrete color palette, and six sequential color palettes. These can be accessed from the following R objects:
 
--   icamp_blue_discrete for the unique iCaMP blue color
--   icamp_colorblind_friendly_discrete for the colorblind friendly palette
--   icamp_palettes_sequential for the sequential palettes -icamp_color_palettes for all palettes
+-   icamp_palettes_discrete for the sequential plettes
+-   icamp_palettes_sequential for the sequential palettes 
+-icamp_color_palettes for all palettes
 
 You can preview the palettes in the console by printing them:
 
