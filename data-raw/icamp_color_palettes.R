@@ -2,7 +2,7 @@ library(palettes)
 
 #Discrete Color Palettes--------------------------------------------------------
 
-icamp_discrete <- pal_palette(
+icamp_palettes_discrete <- pal_palette(
 
   icamp_blue = c("#1D0E8C"),
 
