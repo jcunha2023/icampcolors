@@ -35,8 +35,7 @@ usethis::use_data(icamp_palettes_sequential, overwrite = TRUE)
 #All Palettes-------------------------------------------------------------------
 
 icamp_color_palettes <- c(
-  icamp_blue_discrete,
-  icamp_colorblind_friendly_discrete,
+  icamp_palettes_discrete,
   icamp_palettes_sequential
 )
 
