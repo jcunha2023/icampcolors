@@ -4,7 +4,7 @@ output: github_document
 date: "2024-02-05"
 ---
 
-```{r, include=FALSE, cache = FALSE, echo = FALSE}
+```{r, include=FALSE, cache = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#",
