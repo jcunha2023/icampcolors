@@ -36,8 +36,24 @@ library(devtools)
 # Loading required package: usethis
 
 devtools::install_github("jcunha2023/icampcolors")
-# Skipping install of 'icampcolors' from a github remote, the SHA1 (4f8297d7) has not changed since last install.
-#   Use `force = TRUE` to force installation
+# Downloading GitHub repo jcunha2023/icampcolors@HEAD
+# tibble (NA -> 3.2.1) [CRAN]
+# Installing 1 packages: tibble
+# Installing package into '/usr4/bf527/jcunha1/R/x86_64-pc-linux-gnu-library/4.2'
+# (as 'lib' is unspecified)
+# Warning in i.p(...): installation of package 'tibble' had non-zero exit status
+#      checking for file ‘/scratch/230855.1.ood/RtmpjbixWD/remotes3d15e84b4e9e1b/jcunha2023-icampcolors-0833c77/DESCRIPTION’ ...  ✔  checking for file ‘/scratch/230855.1.ood/RtmpjbixWD/remotes3d15e84b4e9e1b/jcunha2023-icampcolors-0833c77/DESCRIPTION’
+#   ─  preparing ‘icampcolors’:
+#      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#   ─  checking for LF line-endings in source and make files and shell scripts
+#   ─  checking for empty or unneeded directories
+#   ─  building ‘icampcolors_0.1.0.tar.gz’
+#      Warning: invalid uid value replaced by that for user 'nobody'
+#    Warning: invalid gid value replaced by that for user 'nobody'
+#      
+# 
+# Installing package into '/usr4/bf527/jcunha1/R/x86_64-pc-linux-gnu-library/4.2'
+# (as 'lib' is unspecified)
 ```
 
 ## Usage
