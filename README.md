@@ -16,28 +16,87 @@ Package](https://mccarthy-m-g.github.io/palettes/index.html), both
 developed by Michael McCarthy. Here are additional resources used in the
 development of this package:
 
+- [sunsets Package developed by Michael
+  McCarthy](https://github.com/mccarthy-m-g/sunsets)
 - [R Packages (2e) by Hadley Wickham & Jennifer
   Bryan](https://r-pkgs.org/)
 - [A Helpful Way to Install R Packages Hosted on
   GitHub](https://cran.r-project.org/web/packages/githubinstall/vignettes/githubinstall.html)
 
+## Included Palettes
+
+## Installation
+
+You can install icampcolors from [Github](https://github.com/) by doing
+the following:
+
 ``` r
-summary(cars)
+
+library(devtools)
+# Loading required package: usethis
+
+devtools::install_github("jcunha2023/icampcolors")
+# Skipping install of 'icampcolors' from a github remote, the SHA1 (4f8297d7) has not changed since last install.
+#   Use `force = TRUE` to force installation
 ```
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+## Usage
 
-## Including Plots
+``` r
 
-You can also embed plots, for example:
+library(icampcolors)
+# Loading required package: palettes
+```
 
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
+icampcolors includes a distinct iCaMP blue color palette, a discrete
+fluorescent color palette, a colorblind-friendly discrete color palette,
+and six sequential color palettes. These can be accessed from the
+following R objects:
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+- icamp_blue_discrete for the unique iCaMP blue color
+- icamp_colorblind_friendly_discrete for the colorblind friendly palette
+- icamp_palettes_sequential for the sequential palettes
+  -icamp_color_palettes for all palettes
+
+You can preview the palettes in the console by printing them:
+
+``` r
+icamp_palettes_sequential
+```
+
+<img src="README_files/figures//icamp_palettes_sequential.svg" width="100%" />
+
+Preview the palettes in the Plots pane with plot():
+
+<img src="README_files/figures/unnamed-chunk-4-1.png" width="100%" />
+
+Subset palettes using \[, \[\[, and \$. - To extract one or more
+palettes use \[:
+
+``` r
+icamp_palettes_sequential[c("blue", "bright")]
+# <palettes_palette[2]>
+# $blue
+# <palettes_colour[6]>
+# • #E4F1F7
+# • #C5E1EF
+# • #6CB0D6
+# • #3C93C2
+# • #226E9C
+# • #0D4A70
+# 
+# $bright
+# <palettes_colour[7]>
+# • #FFF3B2
+# • #FED976
+# • #FEB24C
+# • #FD8D3C
+# • #FC4EA2
+# • #E31A1C
+# • #B10026
+```
+
+To get palette names use names():
+
+    # [1] "blue"        "aqua"        "green"       "bright"      "diverging_1"
+    # [6] "diverging_2" "fluro"

@@ -10,12 +10,13 @@ knitr::opts_chunk$set(
   comment = "#",
   fig.path = "README_files/figures/", 
   out.width = "100%",
-  cache = FALSE)
+  cache = FALSE,
+   asciicast_theme = "pkgdown")
 
 asciicast::init_knitr_engine(
   startup = quote({
     library(icampcolors)
-    set.seed(1) }),
+    set.seed(1)}),
   echo = TRUE,
   echo_input = FALSE
 )
@@ -27,21 +28,16 @@ Color palettes developed by Zachary Milstone, MD/PhD for use by the integrative 
 
 This package was created using the [Creating a colour palette package vignette](https://mccarthy-m-g.github.io/palettes/articles/creating-packages.html) and the [palettes Package](https://mccarthy-m-g.github.io/palettes/index.html), both developed by Michael McCarthy. Here are additional resources used in the development of this package:
 
-- [sunsets Package developed by Michael McCarthy](https://github.com/mccarthy-m-g/sunsets)
-- [R Packages (2e) by Hadley Wickham & Jennifer Bryan](https://r-pkgs.org/)
-- [A Helpful Way to Install R Packages Hosted on GitHub](https://cran.r-project.org/web/packages/githubinstall/vignettes/githubinstall.html)
-
+-   [sunsets Package developed by Michael McCarthy](https://github.com/mccarthy-m-g/sunsets)
+-   [R Packages (2e) by Hadley Wickham & Jennifer Bryan](https://r-pkgs.org/)
+-   [A Helpful Way to Install R Packages Hosted on GitHub](https://cran.r-project.org/web/packages/githubinstall/vignettes/githubinstall.html)
 
 ## Included Palettes
-```{r echo = FALSE}
-plot(icampcolors::icamp_color_palettes)
-```
+
 
 ## Installation
 
 You can install icampcolors from [Github](https://github.com/) by doing the following:
-
-
 
 ```{r, echo = TRUE}
 
@@ -51,45 +47,39 @@ devtools::install_github("jcunha2023/icampcolors")
 
 ```
 
-##Usage
+## Usage
 
 ```{r, echo = TRUE}
 
 library(icampcolors)
 ```
 
-
 icampcolors includes a distinct iCaMP blue color palette, a discrete fluorescent color palette, a colorblind-friendly discrete color palette, and six sequential color palettes. These can be accessed from the following R objects:
 
-- icamp_blue_discrete for the unique iCaMP blue color
-- icamp_colorblind_friendly_discrete for the colorblind friendly palette
-- icamp_palettes_sequential for the sequential palettes
--icamp_color_palettes for all palettes
+-   icamp_blue_discrete for the unique iCaMP blue color
+-   icamp_colorblind_friendly_discrete for the colorblind friendly palette
+-   icamp_palettes_sequential for the sequential palettes -icamp_color_palettes for all palettes
 
 You can preview the palettes in the console by printing them:
 
-```{r, echo = FALSE}
+```{asciicast icamp_palettes_sequential}
 icamp_palettes_sequential
 ```
 
 Preview the palettes in the Plots pane with plot():
 
-```{r}
+```{r echo = FALSE}
 plot(icamp_palettes_sequential)
 ```
 
-Subset palettes using [, [[, and $.
-  - To extract one or more palettes use [:
-  
-```{r}
+Subset palettes using [, [[, and \$. - To extract one or more palettes use [:
+
+```{r echo = TRUE}
 icamp_palettes_sequential[c("blue", "bright")]
 ```
 
 To get palette names use names():
 
-```{r}
+```{r echo = FALSE}
 names(icamp_palettes_sequential)
 ```
-
-  
-
