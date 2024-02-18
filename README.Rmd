@@ -88,3 +88,115 @@ To get palette names use names():
 ```{r echo = FALSE}
 names(icamp_palettes_sequential)
 ```
+
+
+## Example Use Cases
+
+```{r echo = FALSE}
+library(icampcolors)
+library(ggplot2)
+library(scales)
+library(dplyr)
+library(gt)
+```
+
+
+Using the Iris data set, you can display data points in iCaMP Blue:
+
+```{r echo = TRUE}
+
+setosa_data <- subset(iris, Species == "setosa")
+
+ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
+  geom_point(aes(color = Species))+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  scale_color_palette_d(icamp_palettes_discrete$icamp_blue)
+```
+
+Here is an example of generating a heatmap with a diverging color palette using the faithfuld data set:
+
+```{r echo = TRUE}
+
+ggplot(faithfuld, aes(eruptions, waiting, fill = density))+
+  geom_tile()+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  scale_fill_palette_c(icamp_color_palettes$diverging_1)
+```
+
+If you want a specific color from a palette, you can use indexing to access the hex code:
+
+
+```{r echo = TRUE}
+
+setosa_data <- subset(iris, Species == "setosa")
+
+ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
+  geom_point(aes(color = Species))+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  scale_color_palette_d(icamp_palettes_discrete$icamp_blue)
+```
+
+Here is an example of generating a heatmap with a diverging color palette using the faithfuld data set:
+
+```{r echo = TRUE}
+
+setosa_data <- subset(iris, Species == "setosa")
+
+ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
+  geom_point(aes(color = Species))+
+  scale_color_palette_d(icamp_color_palettes$fluro[4])
+```
+
+
+Finally, icampcolors can be used with non-ggplot data visualization tools in R. Here is an example of a table displaying air quality metric, with the bright color palette used to fill the temperature cells:
+
+```{r echo = TRUE}
+
+# Modify the `airquality` dataset by adding the year
+# of the measurements (1973) and limiting to 10 rows
+airquality_m <- 
+  airquality %>%
+  mutate(Year = 1973L) %>%
+  slice(1:10) %>% 
+  select(Year, Month, Day, Temp)
+
+# Create a display table using the `airquality`
+# dataset; arrange columns into groups
+gt_tbl <- 
+  gt(airquality_m) %>%
+  tab_header(
+    title = "New York Temperature Measurements",
+    subtitle = "Daily measurements in New York City (May 1-10, 1973)"
+  ) %>%
+  tab_spanner(
+    label = "Time",
+    columns = c(Year, Month, Day)
+  ) %>%
+  tab_spanner(
+    label = "Measurement",
+    columns = c(Temp)
+  ) %>%
+  cols_label(
+    Temp = html("Temp,<br>&deg;F")
+  )
+
+# Show the gt table
+gt_tbl
+
+#pass color palette to vector
+
+color_vector <- rev(icamp_palettes_sequential$bright)
+character_vector <- as.character(color_vector)
+
+gt_tbl %>% 
+  data_color(
+    columns = Temp,
+    colors  = character_vector
+  )
+
+```
+
+

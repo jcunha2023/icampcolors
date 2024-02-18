@@ -40,7 +40,7 @@ library(devtools)
 # Loading required package: usethis
 
 devtools::install_github("jcunha2023/icampcolors")
-# Skipping install of 'icampcolors' from a github remote, the SHA1 (abdcf508) has not changed since last install.
+# Skipping install of 'icampcolors' from a github remote, the SHA1 (b0980f7b) has not changed since last install.
 #   Use `force = TRUE` to force installation
 ```
 
@@ -101,4 +101,28 @@ icamp_palettes_sequential[c("blue", "bright")]
 To get palette names use names():
 
     # [1] "blue"        "aqua"        "green"       "bright"      "diverging_1"
-    # [6] "diverging_2" "fluro"
+    # [6] "diverging_2"
+
+## Example Use Cases
+
+    # 
+    # Attaching package: 'dplyr'
+    # The following objects are masked from 'package:stats':
+    # 
+    #     filter, lag
+    # The following objects are masked from 'package:base':
+    # 
+    #     intersect, setdiff, setequal, union
+
+Using the Iris data set, you can display data points in iCaMP Blue:
+
+``` r
+
+setosa_data <- subset(iris, Species == "setosa")
+
+ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
+  geom_point(aes(color = Species))+
+  scale_color_palette_d(icamp_palettes_discrete$icamp_blue)
+```
+
+<img src="README_files/figures/unnamed-chunk-9-1.png" width="100%" />
