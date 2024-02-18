@@ -40,7 +40,7 @@ library(devtools)
 # Loading required package: usethis
 
 devtools::install_github("jcunha2023/icampcolors")
-# Skipping install of 'icampcolors' from a github remote, the SHA1 (b0980f7b) has not changed since last install.
+# Skipping install of 'icampcolors' from a github remote, the SHA1 (d01be58a) has not changed since last install.
 #   Use `force = TRUE` to force installation
 ```
 
@@ -105,14 +105,20 @@ To get palette names use names():
 
 ## Example Use Cases
 
-    # 
-    # Attaching package: 'dplyr'
-    # The following objects are masked from 'package:stats':
-    # 
-    #     filter, lag
-    # The following objects are masked from 'package:base':
-    # 
-    #     intersect, setdiff, setequal, union
+``` r
+library(icampcolors)
+library(ggplot2)
+library(scales)
+library(dplyr)
+# 
+# Attaching package: 'dplyr'
+# The following objects are masked from 'package:stats':
+# 
+#     filter, lag
+# The following objects are masked from 'package:base':
+# 
+#     intersect, setdiff, setequal, union
+```
 
 Using the Iris data set, you can display data points in iCaMP Blue:
 
@@ -122,7 +128,54 @@ setosa_data <- subset(iris, Species == "setosa")
 
 ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
   geom_point(aes(color = Species))+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   scale_color_palette_d(icamp_palettes_discrete$icamp_blue)
 ```
 
 <img src="README_files/figures/unnamed-chunk-9-1.png" width="100%" />
+
+Here is an example of generating a heatmap with a diverging color
+palette using the faithfuld data set:
+
+``` r
+
+ggplot(faithfuld, aes(eruptions, waiting, fill = density))+
+  geom_tile()+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  scale_fill_palette_c(icamp_color_palettes$diverging_1)
+```
+
+<img src="README_files/figures/unnamed-chunk-10-1.png" width="100%" />
+
+If you want a specific color from a palette, you can use indexing to
+access the hex code:
+
+``` r
+
+setosa_data <- subset(iris, Species == "setosa")
+
+ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
+  geom_point(aes(color = Species))+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  scale_color_palette_d(icamp_color_palettes$fluro[4])
+```
+
+<img src="README_files/figures/unnamed-chunk-11-1.png" width="100%" />
+
+Finally, icampcolors can be used with non-ggplot data visualization
+tools in R. Here is an example of a graph displaying Ozone levels from
+the ‘airquality’ dataset using the bright color palette.
+
+``` r
+
+#create plot
+plot(airquality$Ozone, type = "b", col = icamp_color_palettes$bright, lwd = 2, xlab = "Day", ylab = "Ozone Level", main = "Ozone Levels Over Time")
+
+#add legend
+legend(x = 'topright', legend = unique(airquality$Month), fill = icamp_color_palettes$bright, title = "Month")
+```
+
+<img src="README_files/figures/unnamed-chunk-12-1.png" width="100%" />
