@@ -138,13 +138,20 @@ ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
 ```
 
 
-Finally, icampcolors can be used with non-ggplot data visualization tools in R. Here is an example of a graph displaying Ozone levels from the 'airquality' dataset using the bright color palette: 
+Finally, icampcolors can be used with non-ggplot data visualization tools in R. Here is an example of a graph displaying Ozone levels and temperature from the 'airquality' dataset using the bright color palette: 
 
 
 ```{r echo = TRUE}
 
 #create plot
-plot(airquality$Ozone, type = "b", col = icamp_color_palettes$bright[6], lwd = 2, xlab = "Day", ylab = "Ozone Level", main = "Ozone Levels Over Time")
+plot(airquality$Ozone, type = "p", col = icamp_color_palettes$diverging_2[6], lwd = 2, xlab = "Day", ylab = "Ozone Level", main = "Ozone Levels Over Time")
 
+lines(airquality$Temp, col = icamp_color_palettes$diverging_2[1])
+
+#create legend
+legend(x = "topleft", title = "Variables", 
+       box.lwd = 1,
+       legend = c("Ozone", "Air Temperature"),
+       fill = c(icamp_color_palettes$diverging_2[6], icamp_color_palettes$diverging_2[1]))
 
 ```

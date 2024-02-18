@@ -40,7 +40,7 @@ library(devtools)
 # Loading required package: usethis
 
 devtools::install_github("jcunha2023/icampcolors")
-# Skipping install of 'icampcolors' from a github remote, the SHA1 (d01be58a) has not changed since last install.
+# Skipping install of 'icampcolors' from a github remote, the SHA1 (379f007c) has not changed since last install.
 #   Use `force = TRUE` to force installation
 ```
 
@@ -166,16 +166,22 @@ ggplot(setosa_data, aes(Sepal.Length, Petal.Width))+
 <img src="README_files/figures/unnamed-chunk-11-1.png" width="100%" />
 
 Finally, icampcolors can be used with non-ggplot data visualization
-tools in R. Here is an example of a graph displaying Ozone levels from
-the ‘airquality’ dataset using the bright color palette.
+tools in R. Here is an example of a graph displaying Ozone levels and
+temperature from the ‘airquality’ dataset using the bright color
+palette:
 
 ``` r
 
 #create plot
-plot(airquality$Ozone, type = "b", col = icamp_color_palettes$bright, lwd = 2, xlab = "Day", ylab = "Ozone Level", main = "Ozone Levels Over Time")
+plot(airquality$Ozone, type = "p", col = icamp_color_palettes$diverging_2[6], lwd = 2, xlab = "Day", ylab = "Ozone Level", main = "Ozone Levels Over Time")
 
-#add legend
-legend(x = 'topright', legend = unique(airquality$Month), fill = icamp_color_palettes$bright, title = "Month")
+lines(airquality$Temp, col = icamp_color_palettes$diverging_2[1])
+
+#create legend
+legend(x = "topleft", title = "Variables", 
+       box.lwd = 1,
+       legend = c("Ozone", "Air Temperature"),
+       fill = c(icamp_color_palettes$diverging_2[6], icamp_color_palettes$diverging_2[1]))
 ```
 
 <img src="README_files/figures/unnamed-chunk-12-1.png" width="100%" />
